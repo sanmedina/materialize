@@ -1,8 +1,3 @@
-/*!
- * Materialize v0.98.2 (http://materializecss.com)
- * Copyright 2014-2015 Materialize
- * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
- */
 // Check for jQuery.
 if (typeof(jQuery) === 'undefined') {
   var jQuery;
@@ -7941,7 +7936,9 @@ Picker.extend( 'pickadate', DatePicker )
         }
 
         function tap(e) {
-          e.preventDefault();
+          if (e.type === 'mousedown') {
+            e.preventDefault();
+          }
           pressed = true;
           dragged = false;
           vertical_dragged = false;
@@ -8108,7 +8105,8 @@ Picker.extend( 'pickadate', DatePicker )
         $.error( 'Method ' +  methodOrOptions + ' does not exist on jQuery.carousel' );
       }
     }; // Plugin end
-}( jQuery ));;(function ($) {
+}( jQuery ));
+;(function ($) {
 
   var methods = {
   init: function (options) {
